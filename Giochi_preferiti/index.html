@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="game-container" onclick="window.location.href='Brawl/Brawl_star.html'">
+                <img class="game-image" src="Brawl_star_image.jpg" alt="Brawl_star">
+            </div>
+            <div class="game-container" onclick="window.location.href='fortnite/index.html'">
+                <img class="game-image" src="Fortnite-Epic.jpg" alt="Fortnite">
+                <div class="game-name">Fortnite</div>
+            </div>
+            <div class="game-container" onclick="window.location.href='Clash/Clash_of_Clans.html'">
+                <img class="game-image" src="clash-of-clans.jpg" alt="Clash_of_Clans">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let index = 0; // Indica quale immagine è visibile
+    
+        function cambiaImmagine() {
+            let galleria = document.querySelector('.gallery'); // Prende la galleria
+            let totale = document.querySelectorAll('.game-container').length; // Conta le immagini
+            
+            index = (index + 1) % totale; // Passa alla prossima immagine (torna a 0 alla fine)
+            
+            galleria.style.transform = `translateX(-${index * 100}vw)`; // Sposta la galleria
+        }
+    
+        setInterval(cambiaImmagine, 3000); // Cambia immagine ogni 3 secondi
+    </script>
+</body>
+</html>
